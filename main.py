@@ -42,7 +42,6 @@ SELECT COUNT(*) FROM Flight;
 
 # Execute SQL query and fetch the result
 cursor.execute(sql_task_1)
-
 # Replace this with the code to execute the query and fetch the result
 result_task_1 = cursor.fetchone()[0]
 
@@ -91,7 +90,7 @@ SELECT f.flno, f.destination, a.mname, a.model, f.fare
 FROM Flight AS f
 JOIN Aircraft AS a ON f.aid = a.aid
 WHERE f.origin = 'Madison'
-ORDER BY f.fare;
+ORDER BY f.fare ASC;
 """
 
 # Execute SQL query and fetch the result
@@ -114,5 +113,4 @@ for flno, dest, mname, model, fare in result_task_3:
 # ==============================================================================
 # STEP 4: Close Database Connection
 # ==============================================================================
-
 conn.close()
